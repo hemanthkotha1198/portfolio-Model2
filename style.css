@@ -556,31 +556,28 @@ box-shadow: var(--hover-color);
 display: block;
 font-weight: 600;
 }
-.circle
-{
-    width: 100%;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #fff;
+.circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: auto;
 }
 
-.circle .points
-{
-    width: 2px;
-    height: 5px;
-    background-color: var(--bg-color);
+.circle .point {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 12px;
+    background: #444;
+    transform-origin: 0 -60px;
     border-radius: 3px;
-    transform: rotate(calc(var(--i)*var(--root)))translateY(-45px);
-    animation: glow 0.04s linear forwards;
-    animation-delay:calc(var(--i)*0.05s);
+    transition: background 0.3s;
 }
-.points.marked
-{
-    animation: glow 0.04s linear forwards;
-    animation-delay:calc(var(--i)*0.05s);
+
+.point.marked {
+    background: var(--hover-color);
+    box-shadow: 0 0 5px var(--hover-color);
 }
 
 /* -------------------------------------------portfolio------------------------------------------------------ */
@@ -825,4 +822,5 @@ color: var(--seacon-bg-color);
 #img2{
     height: 600px;
     width: 650px;
+
 }
